@@ -1,9 +1,7 @@
 /*Api-key AIzaSyBDyHyNnTNK0VYCDK2lvF_Vfxkas4AHfl8*/
 
-var test1 = 'global';
-
 $(function(){
-	var test2 = 'document-ready';
+
 	$('form').on('submit', function(event){
 		event.preventDefault();
 		var userSearch = $('#search').val();
@@ -11,7 +9,7 @@ $(function(){
 	});
 
   function getRequest(searchTerm){
-  	var test4 = 'get-request';
+
   	var params={
   		part: 'snippet',
   		key: 'AIzaSyBDyHyNnTNK0VYCDK2lvF_Vfxkas4AHfl8',
@@ -26,14 +24,13 @@ $(function(){
   		//console.log(status, data.items, xhr);
   		
   		});
-  		console.log("ajax complete");
+
   }
 
   function getResults(results){
-  		var local = $('.titles');
+  		var thumbArea = $('.thumbs');
   		$.each(results, function(index, value){
-  			console.log(value.snippet.thumbnails.high.url);
-  		//local.append('<h2>' +value.snippet.thumbnails.high+ '<h2>');
+  		thumbArea.append('<li><img src='+'"'+value.snippet.thumbnails.medium.url+'"'+'></li>');
   	});
   };
 });

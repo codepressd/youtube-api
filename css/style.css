@@ -130,4 +130,13 @@ width: 350px;
 }
 
 
-/**/
+/*thumbnails styling*/
+.titles{
+	padding: 20px 0;
+	margin: 0 auto;
+	text-align: center;
+}
+ul.thumbs li{
+	display: inline-block;
+	padding: 5px;
+}
