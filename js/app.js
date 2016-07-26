@@ -13,6 +13,7 @@ $(function(){
   	var params={
   		part: 'snippet',
   		key: 'AIzaSyBDyHyNnTNK0VYCDK2lvF_Vfxkas4AHfl8',
+  		maxResults: 10,
   		q:searchTerm
   	};
 
@@ -21,7 +22,7 @@ $(function(){
   	    $.getJSON(url, params, function(data, status, xhr){
   		getResults(data.items);
   	
-  		//console.log(status, data.items, xhr);
+  		console.log(data.items);
   		
   		});
 
@@ -30,7 +31,7 @@ $(function(){
   function getResults(results){
   		var thumbArea = $('.thumbs');
   		$.each(results, function(index, value){
-  		thumbArea.append('<li><img src='+'"'+value.snippet.thumbnails.medium.url+'"'+'></li>');
+  		thumbArea.append('<li><a href='+'"'+'https://www.youtube.com/watch?v='+ value.id.videoId +'"'+'><img src='+'"'+value.snippet.thumbnails.medium.url+'"'+'></a></li>');
   	});
   };
 });
